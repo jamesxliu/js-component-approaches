@@ -1,0 +1,46 @@
+{
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ]
+  },
+  "scripts": {
+    "build:server": "babel server --presets es2015 --out-dir lib/server --copy-files",
+    "build:testComponent": "webpack --config components/react/testComponent/webpack.config.js",
+    "build:testComponent2": "webpack --config components/react/testComponent2/webpack.config.js",
+    "build:testComponent3": "webpack --config components/vue/testComponent3/webpack.config.js",
+    "build:testComponent4": "webpack --config components/jquery/testComponent4/umd_lib_webpack.config.js && cp -rf components/jquery/testComponent4 lib/server/public",
+    "build": "npm run build:server && npm run build:testComponent && npm run build:testComponent2 && npm run build:testComponent3 && npm run build:testComponent4",
+    "start": "npm run build && node lib/server"
+  },
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "jquery": "^3.3.1",
+    "namor": "^1.0.1",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "node-sass": "^4.9.0",
+    "postcss-loader": "^2.1.5",
+    "sass-loader": "^7.0.1",
+    "style-loader": "^0.21.0",
+    "vue-loader": "^15.2.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3"
+  }
+}
