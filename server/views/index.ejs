@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Worker <%= pid %></title>
+</head>
+<body>
+<h1 style="font-family:sans-serif;">React/Vue Components as UMD Modules</h1>
+<div id="testComponent_root"></div>
+<div id="testComponent2_root"></div>
+<div id="testComponent3_root"></div>
+<div id="testComponent4_root"></div>
+</body>
+<script type="text/javascript" src="public/components/testComponent.min.js"></script>
+<script type="text/javascript" src="public/components/testComponent2.min.js"></script>
+<script type="text/javascript" src="public/components/testComponent3.min.js"></script>
+<script>
+    _testComponent.init({
+        componentHeading: "React Component #1",
+        componentText: "Body text for React Component #1",
+        el: "testComponent_root"
+    });
+
+    _testComponent2.init({
+        componentHeading: "Heading for React Component #2",
+        componentText: "Body text for React Component #2",
+        el: "testComponent2_root"
+    });
+
+    _testComponent3.init({
+        componentHeading: "Heading for Vue Component",
+        componentText: "Body text for Vue Component",
+        el: "testComponent3_root"
+    });
+</script>
+<script type="module">
+    import jQueryComponent from './public/testComponent4/index.js';
+
+    new jQueryComponent({
+        componentHeading: "Heading for jQuery Component",
+        componentText: "Body text for jQuery Component",
+        el: "testComponent4_root"
+    });
+</script>
+</html>
