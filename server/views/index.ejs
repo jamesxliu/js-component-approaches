@@ -10,10 +10,13 @@
 <div id="testComponent2_root"></div>
 <div id="testComponent3_root"></div>
 <div id="testComponent4_root"></div>
+<hr/>
+<div id="wizard"></div>
 </body>
 <script type="text/javascript" src="public/components/testComponent.min.js"></script>
 <script type="text/javascript" src="public/components/testComponent2.min.js"></script>
 <script type="text/javascript" src="public/components/testComponent3.min.js"></script>
+<script type="text/javascript" src="public/components/wizard.min.js"></script>
 <script>
     _testComponent.init({
         componentHeading: "React Component #1",
@@ -32,6 +35,8 @@
         componentText: "Body text for Vue Component",
         el: "testComponent3_root"
     });
+
+    _wizard.init("wizard");
 </script>
 <script type="module">
     import jQueryComponent from './public/testComponent4/index.js';

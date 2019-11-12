@@ -35,11 +35,12 @@
   },
   "scripts": {
     "build:server": "babel server --presets @babel/preset-env --out-dir lib/server --copy-files",
+    "build:wizard": "webpack --config ./components/react/wizard/webpack.config.js",
     "build:testComponent": "webpack --config ./components/react/testComponent/webpack.config.js",
     "build:testComponent2": "webpack --config components/react/testComponent2/webpack.config.js",
     "build:testComponent3": "webpack --config components/vue/testComponent3/webpack.config.js",
     "build:testComponent4": "webpack --config components/jquery/testComponent4/umd_lib_webpack.config.js && cp -rf components/jquery/testComponent4 lib/server/public",
-    "build": "npm run build:server && npm run build:testComponent && npm run build:testComponent2 && npm run build:testComponent3 && npm run build:testComponent4",
+    "build": "npm run build:server && npm run build:testComponent && npm run build:testComponent2 && npm run build:testComponent3 && npm run build:testComponent4 && npm run build:wizard",
     "start": "npm run build && node lib/server"
   },
   "dependencies": {
